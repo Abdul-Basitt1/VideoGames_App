@@ -1,97 +1,238 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# 🎮 GameVerse - Video Games Discovery App
 
-# Getting Started
+A modern, immersive React Native app for discovering and exploring video games using the RAWG Video Games Database API. Built with React Native CLI and JavaScript.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## ✨ Features
 
-## Step 1: Start Metro
+- 🏠 **Home Screen**: Browse trending games with beautiful cards and smooth animations
+- 🔍 **Search**: Real-time game search with instant results
+- 📰 **News**: Stay updated with upcoming game releases
+- ⭐ **Favorites**: Save and manage your favorite games
+- 🎨 **Modern UI**: Dark theme with neon accents for an immersive gaming experience
+- 🎬 **Onboarding**: Interactive animated introduction for new users
+- 📱 **Game Details**: Rich, detailed views of each game with screenshots and info
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## 🏗️ Tech Stack
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+- **React Native**: 0.81.4
+- **React Navigation**: Stack & Bottom Tabs navigation
+- **Reanimated**: Smooth animations and transitions
+- **Axios**: HTTP client for API calls
+- **AsyncStorage**: Local data persistence
+- **RAWG API**: Video games database
 
-```sh
-# Using npm
-npm start
+## 📦 Dependencies
 
-# OR using Yarn
-yarn start
+### Core Navigation
+- `@react-navigation/native`
+- `@react-navigation/native-stack`
+- `@react-navigation/bottom-tabs`
+- `react-native-screens`
+- `react-native-safe-area-context`
+
+### Animation & UI
+- `react-native-reanimated`
+- `react-native-gesture-handler`
+- `react-native-vector-icons`
+- `react-native-linear-gradient`
+
+### Data & Storage
+- `axios`
+- `@react-native-async-storage/async-storage`
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js >= 20
+- React Native development environment set up
+- Xcode (for iOS)
+- Android Studio (for Android)
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd VideoGames_List
 ```
 
-## Step 2: Build and run your app
-
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
-
-### Android
-
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
+2. Install dependencies:
+```bash
+npm install
 ```
 
-### iOS
+3. Create environment file:
+```bash
+# Create .env file in the root directory
+echo "RAWG_API_KEY=your_api_key_here" > .env
+```
+**Note**: Get your free API key from [RAWG.io](https://rawg.io/apidocs)
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
+4. For iOS, install CocoaPods dependencies:
+```bash
+cd ios
 bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
 bundle exec pod install
+cd ..
 ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+### Running the App
 
-```sh
-# Using npm
+1. Start Metro bundler:
+```bash
+npm start
+```
+
+2. Run on iOS:
+```bash
 npm run ios
-
-# OR using Yarn
-yarn ios
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+3. Run on Android:
+```bash
+npm run android
+```
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+## 📁 Project Structure
 
-## Step 3: Modify your app
+```
+VideoGames_List/
+├── src/
+│   ├── screens/
+│   │   ├── HomeScreen.js          # Main games list
+│   │   ├── GameDetailsScreen.js   # Individual game details
+│   │   ├── NewsScreen.js          # Upcoming games
+│   │   ├── FavoritesScreen.js     # Saved favorites
+│   │   └── OnboardingScreen.js    # First-time user intro
+│   ├── navigation/
+│   │   └── AppNavigator.js        # Navigation setup
+│   ├── services/
+│   │   └── api.js                 # RAWG API integration
+│   ├── utils/
+│   │   └── storage.js             # AsyncStorage helpers
+│   └── constants/
+│       ├── colors.js              # Theme colors
+│       └── api.js                 # API configuration
+├── App.js                         # Root component
+├── index.js                       # Entry point
+└── package.json
+```
 
-Now that you have successfully run the app, let's make changes!
+## 🎨 Design
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+The app features a modern dark theme with vibrant neon accents:
+- **Background**: Deep space black (#0A0A0F)
+- **Cards**: Secondary background (#151520)
+- **Accents**: Cyan (#00D9FF), Pink (#FF0080), Purple (#7C3AED)
+- **Text**: White primary, gray secondary
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+## 🔌 API Configuration
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+The app uses the RAWG Video Games Database API:
+- **Base URL**: `https://api.rawg.io/api`
+- **API Key**: Configured in `.env` file (see Installation step 3)
 
-## Congratulations! :tada:
+### Get Your API Key
 
-You've successfully run and modified your React Native App. :partying_face:
+1. Visit [RAWG.io](https://rawg.io/apidocs)
+2. Sign up for a free account
+3. Get your API key from the dashboard
+4. Add it to your `.env` file
 
-### Now what?
+### Available Endpoints
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+- **Games**: Get trending, upcoming, and all games
+- **Search**: Real-time game search
+- **Details**: Comprehensive game information
+- **Genres**: Filter by game genre
+- **Platforms**: Filter by platform
 
-# Troubleshooting
+## 🎯 Features in Detail
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+### Home Screen
+- Displays trending games from RAWG API
+- Real-time search with 3+ character minimum
+- Smooth card animations on load
+- Pull-to-refresh functionality
 
-# Learn More
+### Game Details
+- Large hero image
+- Complete game description
+- Genres, platforms, developers, publishers
+- Ratings and review counts
+- Release dates
 
-To learn more about React Native, take a look at the following resources:
+### News/Upcoming
+- Latest game releases
+- Upcoming titles
+- Release date tracking
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+### Favorites
+- Save games for later
+- Persistent storage
+- Beautiful empty state
+
+### Onboarding
+- 3-slide animated introduction
+- Shows on first launch only
+- Modern gaming-themed design
+
+## 🛠️ Development
+
+### Adding New Features
+
+1. Create new screens in `src/screens/`
+2. Add navigation routes in `src/navigation/AppNavigator.js`
+3. Use API services from `src/services/api.js`
+4. Follow the existing color scheme in `src/constants/colors.js`
+
+### Code Style
+
+- Use functional components with React Hooks
+- Follow React Native best practices
+- Keep components modular and reusable
+- Use proper error handling in API calls
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+1. **Metro bundler cache issues**:
+```bash
+npm start -- --reset-cache
+```
+
+2. **iOS build issues**:
+```bash
+cd ios
+rm -rf Pods Podfile.lock
+bundle exec pod install
+cd ..
+```
+
+3. **Android build issues**:
+```bash
+cd android
+./gradlew clean
+cd ..
+```
+
+4. **Module not found errors**:
+```bash
+npm install
+```
+
+## 📝 License
+
+This project is private and proprietary.
+
+## 🙏 Acknowledgments
+
+- RAWG API for providing the comprehensive game database
+- React Native community for excellent documentation
+- All the open-source libraries that made this possible
+
+---
+
+Built with ❤️ using React Native
