@@ -119,14 +119,6 @@ VideoGames_List/
 └── package.json
 ```
 
-## 🎨 Design
-
-The app features a modern dark theme with vibrant neon accents:
-- **Background**: Deep space black (#0A0A0F)
-- **Cards**: Secondary background (#151520)
-- **Accents**: Cyan (#00D9FF), Pink (#FF0080), Purple (#7C3AED)
-- **Text**: White primary, gray secondary
-
 ## 🔌 API Configuration
 
 The app uses the RAWG Video Games Database API:
@@ -147,52 +139,6 @@ The app uses the RAWG Video Games Database API:
 - **Details**: Comprehensive game information
 - **Genres**: Filter by game genre
 - **Platforms**: Filter by platform
-
-## 🎯 Features in Detail
-
-### Home Screen
-- Displays trending games from RAWG API
-- Real-time search with 3+ character minimum
-- Smooth card animations on load
-- Pull-to-refresh functionality
-
-### Game Details
-- Large hero image
-- Complete game description
-- Genres, platforms, developers, publishers
-- Ratings and review counts
-- Release dates
-
-### News/Upcoming
-- Latest game releases
-- Upcoming titles
-- Release date tracking
-
-### Favorites
-- Save games for later
-- Persistent storage
-- Beautiful empty state
-
-### Onboarding
-- 3-slide animated introduction
-- Shows on first launch only
-- Modern gaming-themed design
-
-## 🛠️ Development
-
-### Adding New Features
-
-1. Create new screens in `src/screens/`
-2. Add navigation routes in `src/navigation/AppNavigator.js`
-3. Use API services from `src/services/api.js`
-4. Follow the existing color scheme in `src/constants/colors.js`
-
-### Code Style
-
-- Use functional components with React Hooks
-- Follow React Native best practices
-- Keep components modular and reusable
-- Use proper error handling in API calls
 
 ## 🐛 Troubleshooting
 
